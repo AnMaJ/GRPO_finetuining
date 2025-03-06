@@ -1,0 +1,4 @@
+model_name_or_path: PhongNgoGia/Qwen2.5-1.5B-GRPO_SFT
+template: qwen
+infer_backend: huggingface  # choices: [huggingface, vllm]
+trust_remote_code: true

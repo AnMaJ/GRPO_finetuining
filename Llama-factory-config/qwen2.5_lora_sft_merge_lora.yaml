@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: Qwen/Qwen2.5-1.5B-Instruct
+adapter_name_or_path: ./weights/qwen-lora-sft/checkpoint-150
+template: llama3
+trust_remote_code: true
+
+### export
+export_dir: ./weights/qwen_lora_sft
+export_size: 5
+export_device: cpu
+export_legacy_format: false

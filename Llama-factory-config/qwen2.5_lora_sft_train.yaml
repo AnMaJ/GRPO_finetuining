@@ -1,0 +1,43 @@
+
+model_name_or_path: Qwen/Qwen2.5-1.5B-Instruct
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 8
+lora_target: all
+
+# Data configuration
+dataset: passport_en
+template: qwen
+cutoff_len: 4096
+max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+# Training hyperparameters
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+
+# Output configuration
+output_dir: ./weights/qwen-lora-sft
+overwrite_output_dir: true
+
+# Further configurations
+# do_train: true
+# do_eval: true
+# fp16: true
+# tf32: true
+# seed: 42
+# remove_unused_columns: true
+# label_names: [labels]
+# push_to_hub: false
