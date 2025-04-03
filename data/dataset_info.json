@@ -1,0 +1,30 @@
+{
+  "passport_en": {
+  "file_name": "passport_en.jsonl",
+  "formatting": "sharegpt",
+  "columns": {
+    "messages": "conversations"
+  },
+  "tags": {
+    "role_tag": "role",
+    "content_tag": "content",
+    "user_tag": "user",
+    "assistant_tag": "assistant",
+    "system_tag": "system"
+  }
+},
+  "passport_vn_grpo": {
+  "file_name": "passport_en_grpo.jsonl",
+  "formatting": "sharegpt",
+  "columns": {
+    "messages": "conversations"
+  },
+  "tags": {
+    "role_tag": "role",
+    "content_tag": "content",
+    "user_tag": "user",
+    "assistant_tag": "assistant",
+    "system_tag": "system"
+  }
+}
+}
