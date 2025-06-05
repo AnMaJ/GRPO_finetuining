@@ -5,6 +5,8 @@ This project focuses on fine-tuning the Qwen3 8B model for the ArgLLMSs++ projec
 
 The trained model will be stored at HF, so please note that you should generate a HF token to with both read and write permissions :)
 
+**NOTE: Some functions in the code are adopted from the Rabiloo implementation of the GRPO finetuning using TRL**
+
 ## Prerequisites
 - Python 3.10
 - PyTorch
