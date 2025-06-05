@@ -1,7 +1,7 @@
-torch>=2.0.0
-transformers>=4.36.0
-datasets>=2.14.0
-wandb>=0.15.0
-peft>=0.5.0
-trl>=0.7.0
+torch
+transformers
+datasets
+wandb
+peft
+trl
 tensorboard
