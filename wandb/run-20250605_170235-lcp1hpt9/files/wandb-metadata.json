@@ -1,0 +1,70 @@
+{
+  "os": "Linux-6.8.0-50-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.9",
+  "startedAt": "2025-06-05T16:02:35.947647Z",
+  "args": [
+    "--model-id",
+    "Qwen/Qwen3-8B",
+    "--dataset",
+    "data/passport_grpo.jsonl",
+    "--output-dir",
+    "Qwen3-8B-GRPO",
+    "--learning-rate",
+    "1e-5",
+    "--epochs",
+    "2",
+    "--batch-size",
+    "16",
+    "--method",
+    "transformers"
+  ],
+  "program": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/src/grpo_stage.py",
+  "codePath": "src/grpo_stage.py",
+  "git": {
+    "remote": "https://github.com/AnMaJ/GRPO_finetuining",
+    "commit": "8bf41d8bb2ba46358f3d7efc4d7125b71de49054"
+  },
+  "email": "m.mansi@iitg.ac.in",
+  "root": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning",
+  "host": "cloud-vm-01-102.doc.ic.ac.uk",
+  "executable": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env/bin/python",
+  "codePathLocal": "src/grpo_stage.py",
+  "cpu_count": 16,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "gpu_count": 3,
+  "disk": {
+    "/": {
+      "total": "67318153216",
+      "used": "6095523840"
+    }
+  },
+  "memory": {
+    "total": "67424665600"
+  },
+  "cpu": {
+    "count": 16,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.4"
+}

@@ -4,7 +4,7 @@ source env_setup.sh # Set up environment variables for Hugging Face cache
 
 # Default values
 MODEL_ID="Qwen/Qwen3-8B"
-DATASET_PATH="/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/data/passport_en_grpo.jsonl"
+DATASET_PATH="data/passport_grpo.jsonl"
 OUTPUT_DIR="Qwen3-8B-GRPO"
 LEARNING_RATE=1e-5
 EPOCHS=2
@@ -15,13 +15,13 @@ METHOD="transformers"  # Default training method
 usage() {
     echo "Usage: $0 [options]"
     echo "Options:"
-    echo "  -i, --model-id     Base model ID. Default: PhongNgoGia/Qwen2.5-1.5B-Lora"
-    echo "  -d, --dataset      Path to dataset. Default: /app/phongng/LLM/Fintune_llm/LLaMA-Factory/data/passport_en_grpo.jsonl"
-    echo "  -o, --output-dir   Output directory for model. Default: Qwen2.5-1.5B-GRPO"
+    echo "  -i, --model-id     Base model ID. Default: Qwen/Qwen3-8B"
+    echo "  -d, --dataset      Path to dataset. Default: data/passport_grpo.jsonl"
+    echo "  -o, --output-dir   Output directory for model. Default: Qwen3-8B-GRPO"
     echo "  -l, --lr           Learning rate. Default: 1e-5"
     echo "  -e, --epochs       Number of training epochs. Default: 2"
     echo "  -b, --batch-size   Batch size/gradient accumulation steps. Default: 16"
-    echo "  -m, --method       Training method (transformers or unsloth). Default: transformers"
+    echo "  -m, --method       Training method. Default: transformers"
     echo "  -h, --help         Show this help message"
 }
 
@@ -65,8 +65,8 @@ while true; do
         -m|--method)
             METHOD="$2"
             # Validate method
-            if [ "$METHOD" != "transformers" ] && [ "$METHOD" != "unsloth" ]; then
-                echo "Error: Method must be 'transformers' or 'unsloth'"
+            if [ "$METHOD" != "transformers" ]; then
+                echo "Error: Method must be 'transformers'"
                 exit 1
             fi
             shift 2
