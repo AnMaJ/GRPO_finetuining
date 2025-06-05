@@ -1,4 +1,4 @@
-# LLM Fine-Tuning
+# Qwen3 8B Fine-Tuning
 
 ## Overview
 This project focuses on fine-tuning the Qwen3 8B model for the ArgLLMSs++ project using Generative Reward-based Policy Optimization (GRPO): Fine-tuning with reinforcement learning techniques to optimize task-specific generation quality.
