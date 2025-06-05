@@ -10,7 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import LoraConfig, get_peft_model
 from trl import GRPOConfig, GRPOTrainer
 from unsloth import FastLanguageModel, PatchFastRL
-from src.util import format_reward, accuracy_reward, get_dataset
+from util import format_reward, accuracy_reward, get_dataset
 
 # Patch FastRL for unsloth method
 PatchFastRL("GRPO", FastLanguageModel)

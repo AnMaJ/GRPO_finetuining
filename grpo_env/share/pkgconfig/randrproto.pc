@@ -1,0 +1,7 @@
+prefix=/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env
+includedir=${prefix}/include
+ 
+Name: RandrProto
+Description: Randr extension headers
+Version: 1.6.0
+Cflags: -I${includedir}

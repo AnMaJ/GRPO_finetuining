@@ -1,0 +1,7 @@
+prefix=/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env
+includedir=${prefix}/include
+ 
+Name: XF86DGAProto
+Description: XF86DGA extension headers
+Version: 2.1
+Cflags: -I${includedir}

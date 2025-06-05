@@ -1,0 +1,7 @@
+prefix=/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env
+includedir=${prefix}/include
+ 
+Name: PresentProto
+Description: Present extension headers
+Version: 1.4
+Cflags: -I${includedir}

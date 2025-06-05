@@ -1,0 +1,7 @@
+prefix=/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env
+includedir=${prefix}/include
+ 
+Name: ScrnSaverProto
+Description: ScrnSaver extension headers
+Version: 1.2.3
+Cflags: -I${includedir}

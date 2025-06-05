@@ -1,0 +1,107 @@
+{
+  "os": "Linux-6.11.0-21-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.9",
+  "startedAt": "2025-06-03T11:54:40.440774Z",
+  "args": [
+    "--model-id",
+    "Qwen/Qwen2.5-1.5B-Instruct",
+    "--dataset",
+    "/app/phongng/LLM/Fintune_llm/LLaMA-Factory/data/passport_en_grpo.jsonl",
+    "--output-dir",
+    "Qwen2.5-1.5B-GRPO",
+    "--learning-rate",
+    "1e-5",
+    "--epochs",
+    "3",
+    "--batch-size",
+    "16",
+    "--method",
+    "transformers"
+  ],
+  "program": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/src/grpo_stage.py",
+  "codePath": "src/grpo_stage.py",
+  "git": {
+    "remote": "https://github.com/rabiloo/llm-finetuning.git",
+    "commit": "7349ced7e43bb7a0c8e8b25e71a65c15f9a66312"
+  },
+  "email": "m.mansi@iitg.ac.in",
+  "root": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning",
+  "host": "gpuvm20.doc.ic.ac.uk",
+  "executable": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env/bin/python",
+  "codePathLocal": "src/grpo_stage.py",
+  "cpu_count": 60,
+  "cpu_count_logical": 60,
+  "gpu": "NVIDIA A16",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "36672405504",
+      "used": "12153057280"
+    }
+  },
+  "memory": {
+    "total": "177195528192"
+  },
+  "cpu": {
+    "count": 60,
+    "countLogical": 60
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A16",
+      "memoryTotal": "16101933056",
+      "cudaCores": 1280,
+      "architecture": "Ampere"
+    }
+  ],
+  "slurm": {
+    "cluster_name": "compute-cluster",
+    "conf": "/etc/slurm/slurm.conf",
+    "cpus_on_node": "6",
+    "gpus_on_node": "1",
+    "gtids": "0",
+    "job_account": "doc",
+    "job_cpus_per_node": "6",
+    "job_end_time": "1749295304",
+    "job_gid": "602",
+    "job_gpus": "2",
+    "job_id": "172434",
+    "job_name": "interactive",
+    "job_nodelist": "gpuvm20",
+    "job_num_nodes": "1",
+    "job_partition": "a16gpu",
+    "job_qos": "normal",
+    "job_start_time": "1748949704",
+    "job_uid": "17497",
+    "job_user": "m24",
+    "jobid": "172434",
+    "launch_node_ipaddr": "146.169.40.244",
+    "localid": "0",
+    "mpi_type": "none",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "gpuvm20",
+    "oom_kill_step": "0",
+    "prio_process": "0",
+    "procid": "0",
+    "pty_port": "46277",
+    "pty_win_col": "135",
+    "pty_win_row": "28",
+    "srun_comm_host": "146.169.40.244",
+    "srun_comm_port": "40773",
+    "step_id": "4294967290",
+    "step_launcher_port": "40773",
+    "step_nodelist": "gpuvm20",
+    "step_num_nodes": "1",
+    "step_num_tasks": "1",
+    "step_tasks_per_node": "1",
+    "stepid": "4294967290",
+    "submit_dir": "/vol/bitbucket/m24/ArgLLMs++/llm-finetuning",
+    "submit_host": "cloud-vm-40-244.doc.ic.ac.uk",
+    "task_pid": "926203",
+    "tasks_per_node": "6",
+    "topology_addr": "gpuvm20",
+    "topology_addr_pattern": "node"
+  },
+  "cudaVersion": "12.4"
+}

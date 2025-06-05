@@ -1,0 +1,5 @@
+#!/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/grpo_env/bin/python3.12
+
+from idlelib.pyshell import main
+if __name__ == '__main__':
+    main()
