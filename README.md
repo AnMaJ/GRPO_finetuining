@@ -3,6 +3,8 @@
 ## Overview
 This project focuses on fine-tuning the Qwen3 8B model for the ArgLLMSs++ project using Generative Reward-based Policy Optimization (GRPO): Fine-tuning with reinforcement learning techniques to optimize task-specific generation quality.
 
+The trained model will be stored at HF, so please note that you should generate a HF token to with both read and write permissions :)
+
 ## Prerequisites
 - Python 3.10
 - PyTorch
