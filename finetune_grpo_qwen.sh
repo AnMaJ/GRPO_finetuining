@@ -1,9 +1,11 @@
 #!/bin/bash
 
+source env_setup.sh # Set up environment variables for Hugging Face cache
+
 # Default values
-MODEL_ID="PhongNgoGia/Qwen2.5-1.5B-Lora"
+MODEL_ID="Qwen/Qwen3-8B"
 DATASET_PATH="/vol/bitbucket/m24/ArgLLMs++/llm-finetuning/data/passport_en_grpo.jsonl"
-OUTPUT_DIR="Qwen2.5-1.5B-GRPO"
+OUTPUT_DIR="Qwen3-8B-GRPO"
 LEARNING_RATE=1e-5
 EPOCHS=2
 BATCH_SIZE=16

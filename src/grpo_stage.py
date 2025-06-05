@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+import torch
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 import argparse
 import json
 import re
@@ -9,11 +12,7 @@ from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import LoraConfig, get_peft_model
 from trl import GRPOConfig, GRPOTrainer
-from unsloth import FastLanguageModel, PatchFastRL
 from util import format_reward, accuracy_reward, get_dataset
-
-# Patch FastRL for unsloth method
-PatchFastRL("GRPO", FastLanguageModel)
 
 def train_transformers_model(args):
     """Train the model using GRPO with transformers/PEFT method."""
@@ -72,43 +71,6 @@ def train_transformers_model(args):
     trainer.save_model(training_args.output_dir)
     trainer.push_to_hub(dataset_name="passport_en_grpo")
 
-def train_unsloth_model(args):
-    """Train the model using GRPO with unsloth method."""
-    # Load model and tokenizer
-    model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name=args.model_id,
-        load_in_4bit=True,
-        fast_inference=True,
-        gpu_memory_utilization=0.5,
-    )
-
-    # Load dataset
-    train_dataset, test_dataset = get_dataset(args)
-
-    # Define training arguments
-    training_args = GRPOConfig(
-        learning_rate=args.learning_rate,
-        num_train_epochs=args.epochs,
-        per_device_train_batch_size=args.batch_size,
-        output_dir=args.output_dir,
-        logging_steps=10,
-        save_steps=100,
-        max_steps=500,
-        max_grad_norm=1.0,
-    )
-
-    # Initialize trainer
-    trainer = GRPOTrainer(
-        model=model,
-        processing_class=tokenizer,
-        reward_funcs=[format_reward, accuracy_reward],
-        args=training_args,
-        train_dataset=train_dataset,
-    )
-
-    # Train and save model
-    trainer.train()
-    trainer.save_model(args.output_dir)
 
 def main():
     """Main function to parse arguments and run training."""
@@ -125,16 +87,13 @@ def main():
                         help="Number of training epochs")
     parser.add_argument("--batch-size", type=int, default=16,
                         help="Batch size/gradient accumulation steps for training")
-    parser.add_argument("--method", type=str, choices=["transformers", "unsloth"], default="transformers",
-                        help="Training method to use: 'transformers' or 'unsloth'")
+    parser.add_argument("--method", type=str, default="transformers",
+                        help="Training method to use: 'transformers'")
 
     args = parser.parse_args()
 
-    # Choose training method based on argument
-    if args.method == "transformers":
-        train_transformers_model(args)
-    elif args.method == "unsloth":
-        train_unsloth_model(args)
+    # Training the model
+    train_transformers_model(args)
 
 if __name__ == "__main__":
     main()

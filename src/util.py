@@ -108,6 +108,6 @@ def get_dataset(args):
     train_test_split = dataset.train_test_split(test_size=0.1)
     train_dataset = train_test_split["train"]
     test_dataset = train_test_split["test"]
-    train_dataset = train_dataset.map(make_conversation)
+    train_dataset = train_dataset.map(make_conversation) #converting every sample in the train dataset to a structured format with prompt and response from the model 
     test_dataset = test_dataset.map(make_conversation)
     return train_dataset, test_dataset
