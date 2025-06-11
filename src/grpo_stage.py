@@ -75,11 +75,11 @@ def train_transformers_model(args):
 def main():
     """Main function to parse arguments and run training."""
     parser = argparse.ArgumentParser(description="Passport Data Extraction Training and Inference")
-    parser.add_argument("--model-id", type=str, default="PhongNgoGia/Qwen2.5-1.5B-Lora",
+    parser.add_argument("--model-id", type=str, default="Qwen/Qwen3-8B,
                         help="Base model ID to use for training or inference")
     parser.add_argument("--dataset", type=str, default="./passport_en_grpo.jsonl",
                         help="Path to the dataset")
-    parser.add_argument("--output-dir", type=str, default="Qwen2.5-1.5B-GRPO",
+    parser.add_argument("--output-dir", type=str, default="Qwen3-8B-GRPO",
                         help="Output directory for trained model")
     parser.add_argument("--learning-rate", type=float, default=1e-5,
                         help="Learning rate for training")

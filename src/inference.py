@@ -28,25 +28,8 @@ class ModelInferenceHandler:
     A comprehensive handler for model inference with support for various architectures
     """
     PROMPT_TEMPLATES = {
-        # LLM Prompt Templates
-        "llama3": lambda
-            user_input: f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful assistant.<|eot_id|>\n<|start_header_id|>user<|end_header_id|>\n\n{user_input}<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>\n\n",
-
-        "llama2": lambda
-            user_input: f"<s>[INST] <<SYS>>\nYou are a helpful assistant.\n<</SYS>>\n\n{user_input} [/INST]",
-
-        "mistral": lambda user_input: f"<s>[INST] {user_input} [/INST]",
-
-        "chatml": lambda
-            user_input: f"<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n{user_input}<|im_end|>\n<|im_start|>assistant\n",
-
         "qwen": lambda
-            user_input: f"<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n{user_input}<|im_end|>\n<|im_start|>assistant\n",
-
-        "deepseek": lambda user_input: f"<|begin_of_text|>User: {user_input}\n\nAssistant:",
-
-        "zephyr": lambda
-            user_input: f"<|system|>\nYou are a helpful assistant.</s>\n<|user|>\n{user_input}</s>\n<|assistant|>\n"
+            user_input: f"<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n{user_input}<|im_end|>\n<|im_start|>assistant\n"
     }
 
     def __init__(self, config_path: str):

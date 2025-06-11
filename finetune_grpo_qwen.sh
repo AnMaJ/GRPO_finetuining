@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source env_setup.sh # Set up environment variables for Hugging Face cache
+source env_setup.sh # Set up environment variables for Hugging Face cache and others
 
 # Default values
 MODEL_ID="Qwen/Qwen3-8B"
